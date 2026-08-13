@@ -13,10 +13,12 @@ async function loadProducts() {
         const data = await response.json();
         if (!Array.isArray(data)) throw new Error("products.json must contain an array.");
         products.splice(0, products.length, ...data);
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initializeStore, { once: true });
-        } else {
+        if (typeof initializeStore === "function") {
             initializeStore();
+        }
+        if (typeof renderShop === "function") {
+            const requestedCategory = new URLSearchParams(location.search).get("category") || "all";
+            renderShop(requestedCategory);
         }
     } catch (error) {
         console.error(error);
@@ -442,4 +444,52 @@ async function loadProducts() {
   
 }
   document.addEventListener("DOMContentLoaded", loadProducts, { once: true });
+
+  function renderShop(filter = "all") {
+    const grid = $("shopGrid");
+    const filters = $("shopFilters");
+    const count = $("shopCount");
+    if (!grid) return;
+
+    const categories = [...new Set(products.map(p => p.cat).filter(Boolean))];
+
+    if (filters) {
+      filters.innerHTML =
+        `<button class="filter ${filter === "all" ? "active" : ""}" data-shop-filter="all">All</button>` +
+        categories.map(cat =>
+          `<button class="filter ${cat === filter ? "active" : ""}" data-shop-filter="${cat}">
+            ${String(cat).replace(/-/g, " ")}
+          </button>`
+        ).join("");
+
+      if (!filters.dataset.bound) {
+        filters.dataset.bound = "1";
+        filters.addEventListener("click", event => {
+          const button = event.target.closest("[data-shop-filter]");
+          if (!button) return;
+          renderShop(button.dataset.shopFilter);
+        });
+      }
+    }
+
+    const visible = filter === "all" ? products : products.filter(p => p.cat === filter);
+    if (count) count.textContent = `${visible.length} product${visible.length === 1 ? "" : "s"}`;
+
+    grid.innerHTML = visible.map(productCard).join("");
+
+    if (!grid.dataset.bound) {
+      grid.dataset.bound = "1";
+      grid.addEventListener("click", event => {
+        const button = event.target.closest("[data-add]");
+        if (button) {
+          event.preventDefault();
+          event.stopPropagation();
+          addToCart(Number(button.dataset.add));
+        }
+      });
+    }
+  }
+
+  window.renderShop = renderShop;
+
 })();
