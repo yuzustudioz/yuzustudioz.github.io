@@ -5,22 +5,22 @@
   const STORAGE_KEY = "buildo-cart-v3";
 
   const products = [
-    {id:1,name:"Miniature Glow Rabbit",price:20,old:29,cat:"mini",emoji:"🐇",badge:"PRICE DROP"},
-    {id:2,name:"Miniature Glow Elephant",price:29,old:45,cat:"mini",emoji:"🐘"},
-    {id:3,name:"Spacecraft Building Block",price:199,old:349,cat:"space",emoji:"🚀",badge:"PRICE DROP"},
-    {id:4,name:"Classic Red Rose Pot",price:129,old:159,cat:"flowers",emoji:"🌹"},
-    {id:5,name:"Rabbit Building Block",price:79,old:119,cat:"animals",emoji:"🐰"},
-    {id:6,name:"Elephant Building Block",price:79,old:119,cat:"animals",emoji:"🐘"},
-    {id:7,name:"Space Station Building Block",price:199,old:349,cat:"space",emoji:"🛸",badge:"PRICE DROP"},
-    {id:8,name:"Golden Sunflower Pot",price:129,old:159,cat:"flowers",emoji:"🌻"},
-    {id:9,name:"Pug Building Block",price:79,old:119,cat:"animals",emoji:"🐶"},
-    {id:10,name:"Miniature Cute Piglet",price:29,old:45,cat:"mini",emoji:"🐷"},
-    {id:11,name:"Apollo Space Rocket",price:199,old:299,cat:"space",emoji:"🚀"},
-    {id:12,name:"Spring Blossom Tree",price:199,old:249,cat:"flowers",emoji:"🌸"},
-    {id:13,name:"Tricera Building Block",price:79,old:119,cat:"animals",emoji:"🦕"},
-    {id:14,name:"Dachshund Building Block",price:79,old:119,cat:"animals",emoji:"🐕"},
-    {id:15,name:"Miniature Panda",price:55,old:75,cat:"mini",emoji:"🐼"},
-    {id:16,name:"Star Mission Rocket",price:199,old:299,cat:"space",emoji:"🚀",badge:"PRICE DROP"}
+    {id:1,name:"Miniature Glow Rabbit",price:20,old:29,cat:"mini",emoji:"🐇",badge:"PRICE DROP",dimensions:"4 × 3 × 3 cm",material:"Resin",weight:"15 g",quantity:"1 piece",description:"A tiny glow-in-the-dark rabbit made for miniature displays, desks, shelves and creative scenes.",offers:["Buy 3 miniatures and get 5% off","Free shipping on orders above ₹149"],features:["Glow-in-the-dark finish","Compact collectible size","Great for miniature scenes"]},
+    {id:2,name:"Miniature Glow Elephant",price:29,old:45,cat:"mini",emoji:"🐘",dimensions:"4 × 3 × 3.5 cm",material:"Resin",weight:"18 g",quantity:"1 piece",description:"A playful miniature glow elephant that adds a soft pop of character to any tiny setup.",offers:["Buy 3 miniatures and get 5% off","Free shipping on orders above ₹149"],features:["Glow-in-the-dark finish","Small display footprint","Collectible animal design"]},
+    {id:3,name:"Spacecraft Building Block",price:199,old:349,cat:"space",emoji:"🚀",badge:"PRICE DROP",dimensions:"12 × 8 × 6 cm assembled",material:"ABS plastic",weight:"110 g",quantity:"1 set",description:"A compact spacecraft-themed building set designed for a satisfying build and a fun finished display.",offers:["Bundle 2 builds and save 5%","Free shipping on orders above ₹149"],features:["Spacecraft-inspired design","Display-ready finished model","Fun collector build"]},
+    {id:4,name:"Classic Red Rose Pot",price:129,old:159,cat:"flowers",emoji:"🌹",dimensions:"7 × 7 × 9 cm",material:"Resin",weight:"65 g",quantity:"1 piece",description:"A tiny classic red rose pot for adding a warm, playful floral detail to desks, shelves and miniature displays.",offers:["Buy 2 floral pieces and save 5%","Free shipping on orders above ₹149"],features:["Classic red rose design","Compact decorative piece","Easy to style"]},
+    {id:5,name:"Rabbit Building Block",price:79,old:119,cat:"animals",emoji:"🐰",dimensions:"6 × 5 × 7 cm assembled",material:"ABS plastic",weight:"55 g",quantity:"1 set",description:"A cute rabbit-themed building model for a quick build, playful display and easy gifting.",offers:["Bundle 2 building blocks and save 5%","Free shipping on orders above ₹149"],features:["Rabbit-inspired design","Display-friendly size","Fun collectible build"]},
+    {id:6,name:"Elephant Building Block",price:79,old:119,cat:"animals",emoji:"🐘",dimensions:"7 × 5 × 6 cm assembled",material:"ABS plastic",weight:"60 g",quantity:"1 set",description:"A friendly elephant building block that makes a charming addition to a desk or collection.",offers:["Bundle 2 building blocks and save 5%","Free shipping on orders above ₹149"],features:["Elephant-inspired design","Easy display size","Gift-friendly"]},
+    {id:7,name:"Space Station Building Block",price:199,old:349,cat:"space",emoji:"🛸",badge:"PRICE DROP",dimensions:"13 × 10 × 7 cm assembled",material:"ABS plastic",weight:"125 g",quantity:"1 set",description:"Build a tiny orbital world with this playful space-station themed model.",offers:["Bundle 2 space builds and save 5%","Free shipping on orders above ₹149"],features:["Space-station theme","Display-ready model","Creative building experience"]},
+    {id:8,name:"Golden Sunflower Pot",price:129,old:159,cat:"flowers",emoji:"🌻",dimensions:"7 × 7 × 9 cm",material:"Resin",weight:"65 g",quantity:"1 piece",description:"A cheerful sunflower pot designed to bring a little permanent sunshine to your desk.",offers:["Buy 2 floral pieces and save 5%","Free shipping on orders above ₹149"],features:["Bright sunflower design","Compact decor","No maintenance required"]},
+    {id:9,name:"Pug Building Block",price:79,old:119,cat:"animals",emoji:"🐶",dimensions:"6 × 5 × 6 cm assembled",material:"ABS plastic",weight:"55 g",quantity:"1 set",description:"A playful pug-themed building model made for animal lovers and tiny collections.",offers:["Bundle 2 building blocks and save 5%","Free shipping on orders above ₹149"],features:["Cute dog-inspired design","Display-friendly","Fun gift option"]},
+    {id:10,name:"Miniature Cute Piglet",price:29,old:45,cat:"mini",emoji:"🐷",dimensions:"3.5 × 2.5 × 3 cm",material:"Resin",weight:"15 g",quantity:"1 piece",description:"A tiny piglet miniature for adding personality to your little display world.",offers:["Buy 3 miniatures and get 5% off","Free shipping on orders above ₹149"],features:["Tiny collectible","Cute character design","Great for miniature scenes"]},
+    {id:11,name:"Apollo Space Rocket",price:199,old:299,cat:"space",emoji:"🚀",dimensions:"11 × 7 × 7 cm assembled",material:"ABS plastic",weight:"105 g",quantity:"1 set",description:"A compact rocket build for space fans, builders and desk explorers.",offers:["Bundle 2 space builds and save 5%","Free shipping on orders above ₹149"],features:["Rocket-inspired design","Display-ready","Screen-free creative play"]},
+    {id:12,name:"Spring Blossom Tree",price:199,old:249,cat:"flowers",emoji:"🌸",dimensions:"10 × 8 × 12 cm assembled",material:"ABS plastic",weight:"95 g",quantity:"1 set",description:"A blossom tree build that brings a tiny spring garden to your shelf.",offers:["Bundle 2 floral builds and save 5%","Free shipping on orders above ₹149"],features:["Blossom tree design","Decorative display piece","Creative build"]},
+    {id:13,name:"Tricera Building Block",price:79,old:119,cat:"animals",emoji:"🦕",dimensions:"7 × 4 × 6 cm assembled",material:"ABS plastic",weight:"55 g",quantity:"1 set",description:"A tiny prehistoric build for dinosaur fans and playful collections.",offers:["Bundle 2 building blocks and save 5%","Free shipping on orders above ₹149"],features:["Dinosaur-inspired","Compact model","Fun collectible"]},
+    {id:14,name:"Dachshund Building Block",price:79,old:119,cat:"animals",emoji:"🐕",dimensions:"8 × 4 × 5 cm assembled",material:"ABS plastic",weight:"55 g",quantity:"1 set",description:"A charming dachshund-inspired build with a playful silhouette.",offers:["Bundle 2 building blocks and save 5%","Free shipping on orders above ₹149"],features:["Dog-inspired design","Easy display","Gift-friendly"]},
+    {id:15,name:"Miniature Panda",price:55,old:75,cat:"mini",emoji:"🐼",dimensions:"4 × 3 × 4 cm",material:"Resin",weight:"20 g",quantity:"1 piece",description:"A sweet miniature panda for tiny scenes, shelves and desks.",offers:["Buy 3 miniatures and get 5% off","Free shipping on orders above ₹149"],features:["Cute collectible","Compact footprint","Perfect for miniature scenes"]},
+    {id:16,name:"Star Mission Rocket",price:199,old:299,cat:"space",emoji:"🚀",badge:"PRICE DROP",dimensions:"12 × 7 × 7 cm assembled",material:"ABS plastic",weight:"110 g",quantity:"1 set",description:"A colourful rocket-themed build for imaginative space missions and display.",offers:["Bundle 2 space builds and save 5%","Free shipping on orders above ₹149"],features:["Space adventure theme","Display-ready model","Creative screen-free play"]}
   ];
 
   let cart = loadCart();
@@ -51,16 +51,74 @@
   function productCard(p) {
     return `
       <article class="product-card">
-        <div class="product-image">
+        <a class="product-image product-link" href="product.html?id=${p.id}" aria-label="View ${p.name}">
           ${p.badge ? `<span class="badge">${p.badge}</span>` : ""}
           <span class="product-emoji">${p.emoji}</span>
-        </div>
+        </a>
         <div class="product-info">
-          <h3>${p.name}</h3>
+          <h3><a href="product.html?id=${p.id}">${p.name}</a></h3>
           <div class="price">${money(p.price)} <span class="old">${money(p.old)}</span></div>
           <button class="add" type="button" data-add="${p.id}">ADD TO BAG</button>
         </div>
       </article>`;
+  }
+
+  function renderProductDetail() {
+    const mount = $("productDetail");
+    if (!mount) return;
+
+    const id = Number(new URLSearchParams(location.search).get("id"));
+    const p = products.find(x => x.id === id) || products[0];
+    document.title = `${p.name} — BUILDO`;
+
+    mount.innerHTML = `
+      <div class="product-breadcrumb"><a href="index.html">Home</a><span> / </span><a href="index.html#products">Shop</a><span> / ${p.name}</span></div>
+      <div class="product-detail-grid">
+        <div class="detail-art">
+          ${p.badge ? `<span class="badge">${p.badge}</span>` : ""}
+          <span>${p.emoji}</span>
+        </div>
+        <div class="detail-copy">
+          <div class="eyebrow">${p.cat === "mini" ? "MINIATURES" : p.cat.toUpperCase()}</div>
+          <h1>${p.name}</h1>
+          <p class="detail-description">${p.description}</p>
+          <div class="detail-price">${money(p.price)} <span class="old">${money(p.old)}</span></div>
+          <div class="detail-stock">✓ IN STOCK · READY TO DISPATCH</div>
+
+          <div class="offer-card">
+            <strong>🎁 Offers</strong>
+            ${p.offers.map(x => `<div>• ${x}</div>`).join("")}
+          </div>
+
+          <div class="detail-actions">
+            <div class="quantity"><button type="button" data-detail-qty="-1">−</button><strong id="detailQty">1</strong><button type="button" data-detail-qty="1">+</button></div>
+            <button class="btn btn-dark detail-add" type="button" data-detail-add="${p.id}">ADD TO BAG →</button>
+          </div>
+
+          <button class="detail-buy" type="button" data-detail-buy="${p.id}">BUY IT NOW</button>
+
+          <div class="info-rows">
+            <div><span>Dimensions</span><b>${p.dimensions}</b></div>
+            <div><span>Material</span><b>${p.material}</b></div>
+            <div><span>Weight</span><b>${p.weight}</b></div>
+            <div><span>What's included</span><b>${p.quantity}</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-long-details">
+        <div><div class="eyebrow">PRODUCT DETAILS</div><h2>Everything you need to know.</h2></div>
+        <div class="long-copy">
+          <h3>Description</h3><p>${p.description}</p>
+          <h3>Features</h3><ul>${p.features.map(x => `<li>${x}</li>`).join("")}</ul>
+          <h3>Shipping & offers</h3><p>Products are packed carefully before dispatch. Delivery timelines depend on your location. ${p.offers.join(" · ")}.</p>
+        </div>
+      </div>
+
+      <section class="related-section">
+        <div class="eyebrow">KEEP EXPLORING</div><h2>You might also like</h2>
+        <div class="product-grid">${products.filter(x => x.id !== p.id).slice(0,4).map(productCard).join("")}</div>
+      </section>`;
   }
 
   function renderProducts(filter = "all") {
@@ -331,6 +389,26 @@
       if (event.target.id === "checkoutModal") closeCheckout();
     });
 
+    document.addEventListener("click", event => {
+      const qtyButton = event.target.closest("[data-detail-qty]");
+      if (qtyButton) {
+        const qty = $("detailQty");
+        if (qty) qty.textContent = Math.max(1, Number(qty.textContent || 1) + Number(qtyButton.dataset.detailQty));
+      }
+      const addButton = event.target.closest("[data-detail-add]");
+      if (addButton) {
+        const qty = Math.max(1, Number($("detailQty")?.textContent || 1));
+        for (let i = 0; i < qty; i++) addToCart(Number(addButton.dataset.detailAdd));
+        showToast("Added to your bag ✨");
+      }
+      const buyButton = event.target.closest("[data-detail-buy]");
+      if (buyButton) {
+        const qty = Math.max(1, Number($("detailQty")?.textContent || 1));
+        for (let i = 0; i < qty; i++) addToCart(Number(buyButton.dataset.detailBuy));
+        location.href = "index.html?openCart=1";
+      }
+    });
+
     document.addEventListener("keydown", event => {
       if (event.key === "Escape") {
         closeSearch();
@@ -350,8 +428,12 @@
   document.addEventListener("DOMContentLoaded", () => {
     renderProducts();
     renderMostSearched();
+    renderProductDetail();
     renderCart();
     updateCount();
     bindEvents();
+    if (new URLSearchParams(location.search).get("openCart") === "1") {
+      setTimeout(openCart, 80);
+    }
   });
 })();

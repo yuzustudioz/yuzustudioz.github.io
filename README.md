@@ -79,3 +79,30 @@ Replace the placeholder products with your own products and later replace the em
 ## Important
 
 This is an original implementation using placeholder branding and content. Replace the content, product photography, logo and legal/business information with your own material before launch.
+
+
+## Product detail pages
+
+Every product now opens the same reusable product page:
+
+`product.html?id=1`
+
+The product page automatically displays the selected product's:
+- name and pricing
+- price-drop badge
+- description
+- quantity selector
+- Add to Bag / Buy It Now
+- dimensions
+- material
+- weight
+- quantity included
+- offers
+- features
+- related products
+
+### Adding a new product
+
+Add another object to the `products` array in `assets/js/app.js`. You do not need to create a new HTML file. The existing `product.html` handles every product automatically.
+
+Product cards on the Home page and the Most Searched section link to the correct product detail page while their Add to Bag buttons continue to add directly to the persistent cart.
