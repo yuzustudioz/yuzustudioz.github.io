@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+<defs>
+  <radialGradient id="bg" cx="50%" cy="42%" r="75%"><stop offset="0" stop-color="#fff8d9"/><stop offset="1" stop-color="#e7d9b7"/></radialGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="18" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="800" height="800" rx="40" fill="url(#bg)"/>
+<ellipse cx="400" cy="620" rx="285" ry="58" fill="#9d8b6f" opacity=".28"/>
+<g filter="url(#glow)">
+ <path d="M302 245 Q260 170 316 143 Q350 130 375 193 L425 193 Q450 130 484 143 Q540 170 498 245 L515 535 Q508 605 400 616 Q292 605 285 535Z" fill="#fffde9" stroke="#272727" stroke-width="9"/>
+ <path d="M322 210 Q286 155 319 139 Q352 124 372 203" fill="#fffde9" stroke="#272727" stroke-width="9"/>
+ <path d="M478 210 Q514 155 481 139 Q448 124 428 203" fill="#fffde9" stroke="#272727" stroke-width="9"/>
+ <ellipse cx="352" cy="328" rx="17" ry="23" fill="#202020"/>
+ <ellipse cx="448" cy="328" rx="17" ry="23" fill="#202020"/>
+ <ellipse cx="400" cy="390" rx="27" ry="20" fill="#202020"/>
+ <path d="M385 430 Q400 445 415 430" fill="none" stroke="#202020" stroke-width="9" stroke-linecap="round"/>
+ <path d="M320 495 Q280 520 300 575" fill="none" stroke="#272727" stroke-width="18" stroke-linecap="round"/>
+ <path d="M480 495 Q520 520 500 575" fill="none" stroke="#272727" stroke-width="18" stroke-linecap="round"/>
+</g>
+<circle cx="240" cy="180" r="34" fill="#c9ff67" opacity=".8"/>
+<circle cx="570" cy="240" r="24" fill="#a5e8ff" opacity=".8"/>
+<text x="400" y="705" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#262626">GLOW MINI DOG • SAMPLE ART</text>
+</svg>
