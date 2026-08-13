@@ -1,65 +1,81 @@
-# BUILDO — Dawbu-style GitHub Pages Store
+# BUILDO — GitHub Pages + WhatsApp Store
 
-A static ecommerce storefront inspired by the general layout and shopping flow of Dawbu.com.
+This repository is a complete static ecommerce-style website inspired by the general layout and visual feel of modern playful Indian ecommerce stores.
 
 ## Included
 
-- Responsive homepage
-- Announcement bar
-- Sticky navigation
-- Category navigation
-- Product grids
-- Product filtering
-- Search overlay
-- Shopping bag/cart
-- `localStorage` cart persistence
+- Responsive desktop and mobile layout
 - Mobile navigation
-- Newsletter interaction
-- WhatsApp checkout with customer details
+- Product cards
+- Category filtering
+- Search overlay
+- Shopping bag
+- Persistent cart using localStorage
+- WhatsApp checkout
+- Customer name, phone and delivery address form
+- WhatsApp destination: +91 9876543210
 - No backend required
+- GitHub Pages compatible
 
-## Run locally
+## WhatsApp checkout
 
-Just open `index.html` in a browser.
+The checkout flow is:
 
-For a more accurate local server:
+1. Add products to the bag.
+2. Open the bag.
+3. Press Checkout.
+4. Enter name, phone and delivery address.
+5. Press Continue to WhatsApp.
+6. The browser opens:
 
-```bash
-python -m http.server 8000
+`https://wa.me/919876543210?...`
+
+The order message contains the products, quantities, prices, subtotal and customer details.
+
+On mobile, supported browsers can hand the link to WhatsApp. On Windows/macOS, the link can use WhatsApp Web or the installed WhatsApp application.
+
+## GitHub Pages deployment
+
+Upload the entire repository contents to GitHub.
+
+Then:
+
+**Repository → Settings → Pages → Deploy from a branch → main → /(root) → Save**
+
+The site is entirely static.
+
+## Change the WhatsApp number
+
+Open:
+
+`assets/js/app.js`
+
+Change:
+
+```js
+const WHATSAPP_NUMBER = "919876543210";
 ```
 
-Then visit `http://localhost:8000`.
+Use the international number without `+`, spaces or hyphens.
 
-## GitHub Pages
+## Change products
 
-1. Create a GitHub repository.
-2. Upload everything inside this folder.
-3. Go to **Settings → Pages**.
-4. Select **Deploy from a branch**.
-5. Select `main` and `/ (root)`.
-6. Save.
+Product data is near the top of:
 
-Your website will be available at your GitHub Pages URL.
+`assets/js/app.js`
 
-## Changing content
+Each product has:
 
-Most content is in:
+- `id`
+- `name`
+- `price`
+- `old`
+- `cat`
+- `emoji`
+- optional `badge`
 
-- `index.html` — sections, navigation, text
-- `assets/js/app.js` — product catalog, prices, cart
-- `assets/css/style.css` — colors, spacing, layout
-
-Replace the placeholder emoji product visuals with your own images later.
+Replace the placeholder products with your own products and later replace the emoji artwork with actual product images.
 
 ## Important
 
-This is an original implementation inspired by the general shopping structure and visual feel of Dawbu. It does not copy Dawbu's source code, branding, proprietary assets, or product photography.
-
-
-## WhatsApp orders
-
-The checkout button opens WhatsApp with a pre-filled order message containing the cart contents, subtotal, customer name, phone and delivery address.
-
-The configured WhatsApp destination is the number supplied for this site. To change it later, edit `whatsappNumber` in `assets/js/app.js`.
-
-For production, consider adding server-side order validation, payment confirmation and a privacy policy before accepting large volumes of orders.
+This is an original implementation using placeholder branding and content. Replace the content, product photography, logo and legal/business information with your own material before launch.

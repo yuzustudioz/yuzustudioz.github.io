@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fffdf8">
+  <meta name="description" content="BUILDO — playful building blocks, miniatures and creative kits.">
   <title>BUILDO — Creative Toys & Collectibles</title>
-  <meta name="description" content="A playful ecommerce storefront inspired by modern Indian toy stores.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -14,43 +15,40 @@
   <div class="announcement">
     <span>🚚 Free shipping on orders above ₹149</span>
     <span>•</span>
-    <span>🎁 Mystery surprise on selected orders</span>
-    <span>•</span>
-    <span>💳 Cash on delivery available</span>
+    <span>💬 Order directly on WhatsApp</span>
   </div>
 
   <header class="header">
     <div class="header-inner">
-      <button class="icon-btn mobile-menu" aria-label="Open menu" onclick="toggleMobileMenu()">☰</button>
-      <a class="logo" href="index.html">BUILDO<span>®</span></a>
+      <button id="mobileMenuBtn" class="icon-btn mobile-menu" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      <a class="logo" href="#top">BUILDO<span>®</span></a>
 
-      <nav class="main-nav" id="mainNav">
+      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
         <a href="#new">New Arrivals</a>
         <div class="nav-dropdown">
-          <a href="#collections">Building Blocks <span>⌄</span></a>
+          <a href="#products">Building Blocks <span>⌄</span></a>
           <div class="dropdown-menu">
             <a href="#products">All Products</a>
             <a href="#space">Space</a>
             <a href="#flowers">Flowers & Plants</a>
             <a href="#animals">Animals</a>
-            <a href="#vehicles">Vehicles</a>
+            <a href="#miniatures">Miniatures</a>
           </div>
         </div>
         <a href="#miniatures">Miniature Toys</a>
-        <a href="#puzzles">Puzzles</a>
+        <a href="#products">Puzzles</a>
         <a href="#collections">Collections</a>
         <a href="#about">About</a>
       </nav>
 
       <div class="header-actions">
-        <button class="icon-btn" onclick="openSearch()" aria-label="Search">⌕</button>
-        <button class="icon-btn account-btn" onclick="showToast('Account login can be connected later.')">♙</button>
-        <button class="bag-btn" onclick="openCart()">Bag <b id="cartCount">0</b></button>
+        <button id="searchBtn" class="icon-btn" type="button" aria-label="Search">⌕</button>
+        <button id="bagBtn" class="bag-btn" type="button">Bag <b id="cartCount">0</b></button>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
       <div class="hero-copy">
         <div class="eyebrow">BUILD • PLAY • COLLECT</div>
@@ -61,7 +59,7 @@
           <a class="btn btn-light" href="#collections">Explore collections</a>
         </div>
       </div>
-      <div class="hero-art">
+      <div class="hero-art" aria-hidden="true">
         <div class="sun"></div>
         <div class="shape shape-a"></div>
         <div class="shape shape-b"></div>
@@ -73,18 +71,21 @@
       </div>
     </section>
 
-    <section class="quick-cats" id="collections">
+    <section class="quick-cats" id="collections" aria-label="Collections">
       <a href="#products"><span>🧱</span><strong>Building Blocks</strong><small>100+ builds</small></a>
       <a href="#miniatures"><span>🐣</span><strong>Miniatures</strong><small>Tiny treasures</small></a>
       <a href="#space"><span>🚀</span><strong>Space</strong><small>Explore beyond</small></a>
       <a href="#flowers"><span>🌻</span><strong>Flowers & Plants</strong><small>Build your garden</small></a>
       <a href="#animals"><span>🦊</span><strong>Animals</strong><small>Wild & wonderful</small></a>
-      <a href="#puzzles"><span>🧩</span><strong>Puzzles</strong><small>Think different</small></a>
+      <a href="#products"><span>🧩</span><strong>Puzzles</strong><small>Think different</small></a>
     </section>
 
     <section class="section" id="new">
       <div class="section-heading">
-        <div><div class="eyebrow">QUICK ADD-ONS</div><h2>Most searched</h2></div>
+        <div>
+          <div class="eyebrow">QUICK ADD-ONS</div>
+          <h2>Most searched</h2>
+        </div>
         <a href="#products" class="text-link">View all →</a>
       </div>
       <div class="product-grid compact" id="mostSearched"></div>
@@ -104,22 +105,28 @@
 
     <section class="section" id="products">
       <div class="section-heading">
-        <div><div class="eyebrow">BESTSELLER COLLECTION</div><h2>Fan favourites</h2><p class="sub">The builds everyone keeps adding to cart.</p></div>
-        <a href="#all" class="text-link">View more →</a>
+        <div>
+          <div class="eyebrow">BESTSELLER COLLECTION</div>
+          <h2>Fan favourites</h2>
+          <p class="sub">The builds everyone keeps adding to bag.</p>
+        </div>
+        <a href="#products" class="text-link">View more →</a>
       </div>
-      <div class="filter-row">
-        <button class="filter active" data-filter="all">All</button>
-        <button class="filter" data-filter="blocks">Building Blocks</button>
-        <button class="filter" data-filter="mini">Miniatures</button>
-        <button class="filter" data-filter="space">Space</button>
-        <button class="filter" data-filter="flowers">Flowers</button>
-        <button class="filter" data-filter="animals">Animals</button>
+
+      <div class="filter-row" id="filterRow">
+        <button class="filter active" type="button" data-filter="all">All</button>
+        <button class="filter" type="button" data-filter="blocks">Building Blocks</button>
+        <button class="filter" type="button" data-filter="mini">Miniatures</button>
+        <button class="filter" type="button" data-filter="space">Space</button>
+        <button class="filter" type="button" data-filter="flowers">Flowers</button>
+        <button class="filter" type="button" data-filter="animals">Animals</button>
       </div>
+
       <div class="product-grid" id="productGrid"></div>
     </section>
 
-    <section class="feature-grid" id="space">
-      <article class="feature feature-dark">
+    <section class="feature-grid">
+      <article class="feature feature-dark" id="space">
         <div><span>01 / SPACE</span><h3>Build your<br>own universe.</h3><a href="#products">Explore space →</a></div>
         <div class="feature-emoji">🚀</div>
       </article>
@@ -135,12 +142,19 @@
 
     <section class="section" id="miniatures">
       <div class="section-heading">
-        <div><div class="eyebrow">TINY TREASURES</div><h2>Miniatures worth collecting</h2></div>
+        <div>
+          <div class="eyebrow">TINY TREASURES</div>
+          <h2>Miniatures worth collecting</h2>
+        </div>
         <a href="#products" class="text-link">Shop miniatures →</a>
       </div>
       <div class="mini-banner">
-        <div><span>JUST A LITTLE<br><b>MORE CUTE.</b></span><p>Mix, match and create your own miniature world.</p><a class="btn btn-dark" href="#products">Shop miniatures</a></div>
-        <div class="mini-scene"><span>🐰</span><span>🌸</span><span>🐷</span><span>🍄</span><span>🐼</span></div>
+        <div>
+          <span>JUST A LITTLE<br><b>MORE CUTE.</b></span>
+          <p>Mix, match and create your own miniature world.</p>
+          <a class="btn btn-dark" href="#products">Shop miniatures</a>
+        </div>
+        <div class="mini-scene" aria-hidden="true"><span>🐰</span><span>🌸</span><span>🐷</span><span>🍄</span><span>🐼</span></div>
       </div>
     </section>
 
@@ -151,7 +165,7 @@
         <p>Mix any six eligible products and unlock a special bundle price.</p>
         <a class="btn btn-dark" href="#products">Build my bundle →</a>
       </div>
-      <div class="bundle-stack"><span>🦁</span><span>🌵</span><span>🚀</span><span>🌸</span><span>🐧</span><span>🛸</span></div>
+      <div class="bundle-stack" aria-hidden="true"><span>🦁</span><span>🌵</span><span>🚀</span><span>🌸</span><span>🐧</span><span>🛸</span></div>
     </section>
 
     <section class="reviews">
@@ -166,7 +180,7 @@
 
     <section class="newsletter">
       <div><div class="eyebrow">STAY IN THE LOOP</div><h2>New drops. Tiny prices.<br>No boring emails.</h2></div>
-      <form onsubmit="subscribe(event)"><input type="email" placeholder="Your email address" required><button class="btn btn-dark">Sign me up →</button></form>
+      <form id="newsletterForm"><input type="email" placeholder="Your email address" required><button class="btn btn-dark" type="submit">Sign me up →</button></form>
     </section>
 
     <section class="about" id="about">
@@ -179,26 +193,53 @@
 
   <footer>
     <div class="footer-top">
-      <div><a class="logo" href="#">BUILDO<span>®</span></a><p>Creative little things for curious people.</p></div>
+      <div><a class="logo" href="#top">BUILDO<span>®</span></a><p>Creative little things for curious people.</p></div>
       <div><h4>Shop</h4><a href="#products">All products</a><a href="#new">New arrivals</a><a href="#miniatures">Miniatures</a><a href="#collections">Collections</a></div>
       <div><h4>Help</h4><a href="#">Track order</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Contact</a></div>
       <div><h4>Follow</h4><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">Facebook</a></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 BUILDO. All rights reserved.</span><span>Made for GitHub Pages · Static HTML/CSS/JS</span></div>
+    <div class="footer-bottom"><span>© 2026 BUILDO. All rights reserved.</span><span>Static GitHub Pages store</span></div>
   </footer>
 
-  <div class="search-overlay" id="searchOverlay">
-    <button class="close" onclick="closeSearch()">×</button>
-    <div class="search-box"><input id="searchInput" placeholder="Search products..." oninput="searchProducts(this.value)"><div id="searchResults"></div></div>
+  <!-- Search -->
+  <div class="search-overlay" id="searchOverlay" hidden>
+    <button class="close" id="searchClose" type="button" aria-label="Close search">×</button>
+    <div class="search-box">
+      <input id="searchInput" type="search" placeholder="Search products..." autocomplete="off">
+      <div id="searchResults"></div>
+    </div>
   </div>
 
-  <aside class="cart-drawer" id="cartDrawer">
-    <div class="cart-head"><h2>Your bag</h2><button onclick="closeCart()">×</button></div>
+  <!-- Cart -->
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="cart-head"><h2>Your bag</h2><button id="cartClose" type="button" aria-label="Close bag">×</button></div>
     <div id="cartItems" class="cart-items"></div>
-    <div class="cart-footer"><div><span>Subtotal</span><strong id="cartTotal">₹0</strong></div><button class="btn btn-dark full" onclick="checkout()">Checkout →</button><small>Demo checkout — connect your payment/order backend later.</small></div>
+    <div class="cart-footer">
+      <div><span>Subtotal</span><strong id="cartTotal">₹0</strong></div>
+      <button id="checkoutBtn" class="btn btn-dark full" type="button">Checkout →</button>
+      <small>Orders are confirmed through WhatsApp.</small>
+    </div>
   </aside>
-  <div class="drawer-backdrop" id="backdrop" onclick="closeCart()"></div>
-  <div class="toast" id="toast"></div>
+  <div class="drawer-backdrop" id="backdrop" hidden></div>
+
+  <!-- WhatsApp checkout -->
+  <div class="checkout-modal" id="checkoutModal" hidden>
+    <div class="checkout-box" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <button class="checkout-close" id="checkoutClose" type="button" aria-label="Close checkout">×</button>
+      <div class="eyebrow">WHATSAPP CHECKOUT</div>
+      <h2 id="checkoutTitle">Almost there.</h2>
+      <p class="checkout-note">Enter your delivery details and we'll prepare the order in WhatsApp.</p>
+      <form id="checkoutForm">
+        <label>Name<input id="customerName" type="text" placeholder="Your name" autocomplete="name" required></label>
+        <label>Phone<input id="customerPhone" type="tel" inputmode="tel" placeholder="Your phone number" autocomplete="tel" required></label>
+        <label>Delivery address<textarea id="customerAddress" rows="3" placeholder="House / flat, street, city, PIN code" autocomplete="street-address" required></textarea></label>
+        <button class="btn btn-dark full" type="submit">Continue to WhatsApp →</button>
+      </form>
+      <small>Your cart and details will be included in the WhatsApp message.</small>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="assets/js/app.js"></script>
 </body>
