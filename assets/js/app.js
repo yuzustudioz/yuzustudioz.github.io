@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const WHATSAPP_NUMBER = "919876543210";
+  const WHATSAPP_NUMBER = "918779673726";
   const STORAGE_KEY = "buildo-cart-v3";
 
   const products = [
