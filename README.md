@@ -1,47 +1,65 @@
-# LOREM — GitHub Pages Storefront
+# BUILDO — Dawbu-style GitHub Pages Store
 
-A static ecommerce-style storefront inspired by the general feel of modern cute lifestyle/gifting stores.
+A static ecommerce storefront inspired by the general layout and shopping flow of Dawbu.com.
 
-## Features
+## Included
+
 - Responsive homepage
-- Shop/category filtering
-- Product detail pages
-- Search
-- Shopping cart using localStorage
-- WhatsApp order flow
+- Announcement bar
+- Sticky navigation
+- Category navigation
+- Product grids
+- Product filtering
+- Search overlay
+- Shopping bag/cart
+- `localStorage` cart persistence
+- Mobile navigation
+- Newsletter interaction
+- WhatsApp checkout with customer details
 - No backend required
-- GitHub Pages compatible
 
-## Publish on GitHub Pages
-1. Create a new GitHub repository.
-2. Upload all files/folders from this project.
+## Run locally
+
+Just open `index.html` in a browser.
+
+For a more accurate local server:
+
+```bash
+python -m http.server 8000
+```
+
+Then visit `http://localhost:8000`.
+
+## GitHub Pages
+
+1. Create a GitHub repository.
+2. Upload everything inside this folder.
 3. Go to **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Select **Deploy from a branch**.
 5. Select `main` and `/ (root)`.
-6. Save and wait for GitHub Pages to publish.
+6. Save.
 
-## Important customizations
-### WhatsApp
-Open `js/cart.js` and replace:
-`919876543210`
-with your WhatsApp number including country code, without `+`.
+Your website will be available at your GitHub Pages URL.
 
-### Products
-Edit `js/products.js`. Each product has:
-- id
-- name
-- price
-- category
-- tags
-- emoji
-- background class
-- description
+## Changing content
 
-### Branding
-Change `LOREM` in the HTML files and update colors/fonts in `css/style.css`.
+Most content is in:
 
-### Real product images
-The demo uses emoji artwork so it works immediately without copyrighted/product images. Replace the `.product-image` contents with `<img>` elements when you have your own product photos.
+- `index.html` — sections, navigation, text
+- `assets/js/app.js` — product catalog, prices, cart
+- `assets/css/style.css` — colors, spacing, layout
 
-## Payment
-This version intentionally uses WhatsApp ordering. GitHub Pages is static hosting and does not itself process payments or store orders. A payment gateway/backend can be added later.
+Replace the placeholder emoji product visuals with your own images later.
+
+## Important
+
+This is an original implementation inspired by the general shopping structure and visual feel of Dawbu. It does not copy Dawbu's source code, branding, proprietary assets, or product photography.
+
+
+## WhatsApp orders
+
+The checkout button opens WhatsApp with a pre-filled order message containing the cart contents, subtotal, customer name, phone and delivery address.
+
+The configured WhatsApp destination is the number supplied for this site. To change it later, edit `whatsappNumber` in `assets/js/app.js`.
+
+For production, consider adding server-side order validation, payment confirmation and a privacy policy before accepting large volumes of orders.

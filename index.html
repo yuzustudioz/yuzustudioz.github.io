@@ -1,95 +1,205 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LOREM — Cute Things, Good Vibes</title>
-  <meta name="description" content="A cute lifestyle and gifting store demo.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BUILDO — Creative Toys & Collectibles</title>
+  <meta name="description" content="A playful ecommerce storefront inspired by modern Indian toy stores.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <div class="announcement">FREE SHIPPING ON ORDERS ABOVE ₹999 ✦ SHOP NOW</div>
+  <div class="announcement">
+    <span>🚚 Free shipping on orders above ₹149</span>
+    <span>•</span>
+    <span>🎁 Mystery surprise on selected orders</span>
+    <span>•</span>
+    <span>💳 Cash on delivery available</span>
+  </div>
+
   <header class="header">
-    <a class="logo" href="index.html">LOREM<span>♡</span></a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="shop.html?category=New">New In</a>
-      <a href="shop.html?category=Gifts">Gifts</a>
-    </nav>
-    <div class="header-actions">
-      <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
-      <a class="cart-link" href="cart.html">Bag <span class="cart-count">0</span></a>
-      <button class="menu-btn" id="menuBtn">☰</button>
+    <div class="header-inner">
+      <button class="icon-btn mobile-menu" aria-label="Open menu" onclick="toggleMobileMenu()">☰</button>
+      <a class="logo" href="index.html">BUILDO<span>®</span></a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#new">New Arrivals</a>
+        <div class="nav-dropdown">
+          <a href="#collections">Building Blocks <span>⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="#products">All Products</a>
+            <a href="#space">Space</a>
+            <a href="#flowers">Flowers & Plants</a>
+            <a href="#animals">Animals</a>
+            <a href="#vehicles">Vehicles</a>
+          </div>
+        </div>
+        <a href="#miniatures">Miniature Toys</a>
+        <a href="#puzzles">Puzzles</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" onclick="openSearch()" aria-label="Search">⌕</button>
+        <button class="icon-btn account-btn" onclick="showToast('Account login can be connected later.')">♙</button>
+        <button class="bag-btn" onclick="openCart()">Bag <b id="cartCount">0</b></button>
+      </div>
     </div>
   </header>
-
-  <div class="search-panel" id="searchPanel">
-    <input id="searchInput" type="search" placeholder="Search for something cute...">
-    <button id="closeSearch">×</button>
-    <div id="searchResults"></div>
-  </div>
 
   <main>
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">A LITTLE SOMETHING SPECIAL</p>
-        <h1>Things that<br><em>make you smile.</em></h1>
-        <p class="hero-text">Cute little finds, thoughtful gifts and everyday things made a little more fun.</p>
-        <a class="btn dark" href="shop.html">SHOP THE COLLECTION →</a>
-      </div>
-      <div class="hero-art">
-        <div class="blob blob-a"></div><div class="blob blob-b"></div>
-        <div class="hero-card">
-          <span>LOREM</span>
-          <strong>GOOD<br>VIBES</strong>
-          <small>just because ♡</small>
+        <div class="eyebrow">BUILD • PLAY • COLLECT</div>
+        <h1>Small things.<br><em>Big imagination.</em></h1>
+        <p>Discover playful building blocks, miniatures and creative kits made for curious minds.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-dark" href="#products">Shop bestsellers →</a>
+          <a class="btn btn-light" href="#collections">Explore collections</a>
         </div>
       </div>
-    </section>
-
-    <section class="section categories">
-      <div class="section-head"><div><p class="eyebrow">BROWSE</p><h2>Shop by mood</h2></div><a href="shop.html">View all →</a></div>
-      <div class="category-grid">
-        <a href="shop.html?category=Stationery" class="category-card c1"><span>Stationery</span><b>→</b></a>
-        <a href="shop.html?category=Home" class="category-card c2"><span>Home & Living</span><b>→</b></a>
-        <a href="shop.html?category=Accessories" class="category-card c3"><span>Accessories</span><b>→</b></a>
-        <a href="shop.html?category=Gifts" class="category-card c4"><span>Gifts</span><b>→</b></a>
+      <div class="hero-art">
+        <div class="sun"></div>
+        <div class="shape shape-a"></div>
+        <div class="shape shape-b"></div>
+        <div class="shape shape-c"></div>
+        <div class="hero-card card-one">✿</div>
+        <div class="hero-card card-two">🚀</div>
+        <div class="hero-card card-three">🐻</div>
+        <div class="hero-sticker">NEW<br>DROP!</div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-head"><div><p class="eyebrow">JUST DROPPED</p><h2>New favourites</h2></div><a href="shop.html?category=New">Shop new →</a></div>
-      <div class="product-grid" id="newProducts"></div>
+    <section class="quick-cats" id="collections">
+      <a href="#products"><span>🧱</span><strong>Building Blocks</strong><small>100+ builds</small></a>
+      <a href="#miniatures"><span>🐣</span><strong>Miniatures</strong><small>Tiny treasures</small></a>
+      <a href="#space"><span>🚀</span><strong>Space</strong><small>Explore beyond</small></a>
+      <a href="#flowers"><span>🌻</span><strong>Flowers & Plants</strong><small>Build your garden</small></a>
+      <a href="#animals"><span>🦊</span><strong>Animals</strong><small>Wild & wonderful</small></a>
+      <a href="#puzzles"><span>🧩</span><strong>Puzzles</strong><small>Think different</small></a>
     </section>
 
-    <section class="feature-banner">
-      <div><p class="eyebrow">GIFTING MADE EASY</p><h2>For your people.<br>For no reason at all.</h2><a class="btn light" href="shop.html?category=Gifts">FIND A GIFT →</a></div>
-      <div class="feature-circle">♡</div>
+    <section class="section" id="new">
+      <div class="section-heading">
+        <div><div class="eyebrow">QUICK ADD-ONS</div><h2>Most searched</h2></div>
+        <a href="#products" class="text-link">View all →</a>
+      </div>
+      <div class="product-grid compact" id="mostSearched"></div>
     </section>
 
-    <section class="section">
-      <div class="section-head"><div><p class="eyebrow">OUR PICKS</p><h2>Bestsellers</h2></div><a href="shop.html">See everything →</a></div>
-      <div class="product-grid" id="bestProducts"></div>
+    <section class="band">
+      <div>
+        <span>WHY BUILDO?</span>
+        <strong>Creative play shouldn't<br>cost a fortune.</strong>
+      </div>
+      <div class="band-points">
+        <p><b>01</b> Affordable little joys</p>
+        <p><b>02</b> Screen-free creativity</p>
+        <p><b>03</b> Gift-ready favourites</p>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-heading">
+        <div><div class="eyebrow">BESTSELLER COLLECTION</div><h2>Fan favourites</h2><p class="sub">The builds everyone keeps adding to cart.</p></div>
+        <a href="#all" class="text-link">View more →</a>
+      </div>
+      <div class="filter-row">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="blocks">Building Blocks</button>
+        <button class="filter" data-filter="mini">Miniatures</button>
+        <button class="filter" data-filter="space">Space</button>
+        <button class="filter" data-filter="flowers">Flowers</button>
+        <button class="filter" data-filter="animals">Animals</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="feature-grid" id="space">
+      <article class="feature feature-dark">
+        <div><span>01 / SPACE</span><h3>Build your<br>own universe.</h3><a href="#products">Explore space →</a></div>
+        <div class="feature-emoji">🚀</div>
+      </article>
+      <article class="feature feature-yellow" id="flowers">
+        <div><span>02 / FLOWERS</span><h3>Blooms that<br>never fade.</h3><a href="#products">See the garden →</a></div>
+        <div class="feature-emoji">🌻</div>
+      </article>
+      <article class="feature feature-pink" id="animals">
+        <div><span>03 / ANIMALS</span><h3>A tiny wild<br>world.</h3><a href="#products">Meet the animals →</a></div>
+        <div class="feature-emoji">🦊</div>
+      </article>
+    </section>
+
+    <section class="section" id="miniatures">
+      <div class="section-heading">
+        <div><div class="eyebrow">TINY TREASURES</div><h2>Miniatures worth collecting</h2></div>
+        <a href="#products" class="text-link">Shop miniatures →</a>
+      </div>
+      <div class="mini-banner">
+        <div><span>JUST A LITTLE<br><b>MORE CUTE.</b></span><p>Mix, match and create your own miniature world.</p><a class="btn btn-dark" href="#products">Shop miniatures</a></div>
+        <div class="mini-scene"><span>🐰</span><span>🌸</span><span>🐷</span><span>🍄</span><span>🐼</span></div>
+      </div>
+    </section>
+
+    <section class="bundle">
+      <div class="bundle-copy">
+        <div class="eyebrow">BUILD YOUR OWN BUNDLE</div>
+        <h2>Pick your favourites.<br>Save more.</h2>
+        <p>Mix any six eligible products and unlock a special bundle price.</p>
+        <a class="btn btn-dark" href="#products">Build my bundle →</a>
+      </div>
+      <div class="bundle-stack"><span>🦁</span><span>🌵</span><span>🚀</span><span>🌸</span><span>🐧</span><span>🛸</span></div>
+    </section>
+
+    <section class="reviews">
+      <div class="eyebrow">WHAT PEOPLE SAY</div>
+      <h2>Made for little moments<br>that matter.</h2>
+      <div class="review-row">
+        <blockquote>“The tiny pieces are ridiculously cute. My kid spent an entire evening building instead of asking for the tablet.”<b>— Priya, Mumbai</b></blockquote>
+        <blockquote>“Perfect return gifts. Affordable, fun and they actually get used.”<b>— Rohan, Bengaluru</b></blockquote>
+        <blockquote>“The packaging made it feel like opening a little present.”<b>— Aditi, Pune</b></blockquote>
+      </div>
     </section>
 
     <section class="newsletter">
-      <p class="eyebrow">STAY IN THE LOOP</p><h2>Good things, straight to your inbox.</h2>
-      <form id="newsletterForm"><input type="email" placeholder="Your email address" required><button class="btn dark">JOIN US</button></form>
-      <small id="newsletterMsg"></small>
+      <div><div class="eyebrow">STAY IN THE LOOP</div><h2>New drops. Tiny prices.<br>No boring emails.</h2></div>
+      <form onsubmit="subscribe(event)"><input type="email" placeholder="Your email address" required><button class="btn btn-dark">Sign me up →</button></form>
+    </section>
+
+    <section class="about" id="about">
+      <div class="eyebrow">OUR STORY</div>
+      <h2>More play.<br>Less scrolling.</h2>
+      <p>BUILDO is a placeholder brand created for this GitHub Pages template. Replace this story, imagery and products with your own content when you're ready.</p>
+      <a class="text-link" href="#about">Read our story →</a>
     </section>
   </main>
 
   <footer>
-    <div class="footer-brand"><a class="logo" href="index.html">LOREM<span>♡</span></a><p>Cute things for everyday living.</p></div>
-    <div><h4>SHOP</h4><a href="shop.html">All products</a><a href="shop.html?category=New">New In</a><a href="shop.html?category=Gifts">Gifts</a></div>
-    <div><h4>HELP</h4><a href="contact.html">Contact</a><a href="contact.html">Shipping</a><a href="contact.html">Returns</a></div>
-    <div><h4>FOLLOW</h4><a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">WhatsApp</a></div>
+    <div class="footer-top">
+      <div><a class="logo" href="#">BUILDO<span>®</span></a><p>Creative little things for curious people.</p></div>
+      <div><h4>Shop</h4><a href="#products">All products</a><a href="#new">New arrivals</a><a href="#miniatures">Miniatures</a><a href="#collections">Collections</a></div>
+      <div><h4>Help</h4><a href="#">Track order</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Contact</a></div>
+      <div><h4>Follow</h4><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">Facebook</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 BUILDO. All rights reserved.</span><span>Made for GitHub Pages · Static HTML/CSS/JS</span></div>
   </footer>
-  <div class="copyright">© 2026 LOREM. Demo storefront.</div>
-  <script src="js/products.js"></script><script src="js/app.js"></script>
+
+  <div class="search-overlay" id="searchOverlay">
+    <button class="close" onclick="closeSearch()">×</button>
+    <div class="search-box"><input id="searchInput" placeholder="Search products..." oninput="searchProducts(this.value)"><div id="searchResults"></div></div>
+  </div>
+
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-head"><h2>Your bag</h2><button onclick="closeCart()">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer"><div><span>Subtotal</span><strong id="cartTotal">₹0</strong></div><button class="btn btn-dark full" onclick="checkout()">Checkout →</button><small>Demo checkout — connect your payment/order backend later.</small></div>
+  </aside>
+  <div class="drawer-backdrop" id="backdrop" onclick="closeCart()"></div>
+  <div class="toast" id="toast"></div>
+
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
