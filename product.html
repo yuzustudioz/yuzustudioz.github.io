@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#fffdf8">
-  <meta name="description" content="BUILDO product details">
-  <title>Product — BUILDO</title>
+  <meta name="description" content="Yuzu Studioz — Your Personal collection of creative accessories and collectibles. Explore our range of miniature models, building blocks, and more.">
+  <title>Yuzu Studioz — Your Personal Collection</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <meta property="og:image" content="assets/img/banner.png">
 </head>
 <body>
   <div class="announcement">
@@ -18,14 +19,75 @@
 
   <header class="header">
     <div class="header-inner">
-      <a class="logo" href="index.html">BUILDO<span>®</span></a>
-      <nav class="main-nav" id="mainNav"><a href="shop.html">Shop</a>
-        <a href="index.html#products">Shop</a>
-        <a href="index.html#collections">Collections</a>
-        <a href="about.html">About</a>
-      </nav>
+      <button id="mobileMenuBtn" class="icon-btn mobile-menu" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      <a class="logo" href="index.html">Yuzu Studioz<span>®</span></a>
+
+      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+  <a href="shop.html">Shop</a>
+
+  <details class="nav-dropdown">
+    <summary>Categories <span>⌄</span></summary>
+    <div class="dropdown-menu">
+      <details class="submenu">
+        <summary>Keychains <span>⌄</span></summary>
+        <div class="submenu-menu">
+          <a href="#">NFC keychains</a>
+          <a href="#">Personalize Keychains</a>
+          <a href="#">Key Organizers</a>
+        </div>
+      </details>
+      <details class="submenu">
+        <summary>Wallets <span>⌄</span></summary>
+        <div class="submenu-menu">
+          <a href="#">Card Holders</a>
+        </div>
+      </details>
+      <details class="submenu">
+        <summary>DIY Miniature toys <span>⌄</span></summary>
+        <div class="submenu-menu">
+          <a href="#">Car Models</a>
+          <a href="#">Train Models</a>
+          <a href="#">Plane Models</a>
+        </div>
+      </details>
+      <details class="submenu">
+        <summary>Space <span>⌄</span></summary>
+        <div class="submenu-menu">
+          <a href="#">Satellites</a>
+          <a href="#">Rockets</a>
+          <a href="#">Space Shuttles</a>
+        </div>
+      </details>
+      <details class="submenu">
+        <summary>Home Decor <span>⌄</span></summary>
+        <div class="submenu-menu">
+          <a href="#">Lamps</a>
+          <a href="#">Pots</a>
+          <a href="#">Desk Accessories</a>
+          <a href="#">Coasters</a>
+        </div>
+      </details>
+      <a href="#">Keycaps</a>
+    </div>
+  </details>
+
+  <details class="nav-dropdown">
+    <summary>Custom Collections <span>⌄</span></summary>
+    <div class="dropdown-menu">
+      <a href="#">Lithophanes (Custom)</a>
+      <a href="#">Personal Miniature models (Custom)</a>
+      <a href="#">Boxes (Custom)</a>
+      <a href="#">HueForge (Custom)</a>
+      <a href="#">Puzzles (Custom)</a>
+    </div>
+  </details>
+
+  <a href="about.html">About</a>
+</nav>
+
       <div class="header-actions">
-        <a class="bag-btn" href="index.html?openCart=1">Bag <b id="cartCount">0</b></a>
+        <button id="searchBtn" class="icon-btn" type="button" aria-label="Search">⌕</button>
+        <button id="bagBtn" class="bag-btn" type="button">Bag <b id="cartCount">0</b></button>
       </div>
     </div>
   </header>
